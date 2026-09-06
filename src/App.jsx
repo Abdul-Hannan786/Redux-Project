@@ -1,10 +1,12 @@
-import { fetchImages, fetchVideos } from "./api/mediaApi";
+import SearchBar from "./components/SearchBar";
+import Tabs from "./components/Tabs";
 
 const App = () => {
   return (
     <div className="h-screen w-full bg-gray-950 text-white">
-      <button onClick={() => fetchImages("cat")}>Get Photos</button>
-      <button onClick={() => fetchVideos("cat")}>Get Videos</button>
+      <SearchBar />
+
+      <Tabs />
     </div>
   );
 };

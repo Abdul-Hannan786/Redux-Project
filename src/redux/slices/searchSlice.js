@@ -4,7 +4,7 @@ export const searchSlice = createSlice({
   name: "search",
   initialState: {
     query: "",
-    activeTab: "photos",
+    activeTab: "images",
     result: [],
     loading: false,
     error: null,
