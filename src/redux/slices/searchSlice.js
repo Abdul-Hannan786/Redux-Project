@@ -10,22 +10,22 @@ export const searchSlice = createSlice({
     error: null,
   },
   reducers: {
-    setQuery: (state, action) => {
-      state.query = action.payload;
+    setQuery: (state, actions) => {
+      state.query = actions.payload;
     },
-    setActiveTab: (state, action) => {
-      state.activeTab = action.payload;
+    setActiveTab: (state, actions) => {
+      state.activeTab = actions.payload;
     },
-    setResult: (state, action) => {
+    setResult: (state, actions) => {
       state.loading = false;
-      state.result = action.payload;
+      state.result = actions.payload;
     },
     setLoading: (state) => {
       state.loading = true;
       state.error = null;
     },
-    setError: (state, action) => {
-      state.error = action.payload;
+    setError: (state, actions) => {
+      state.error = actions.payload;
       state.loading = false;
     },
     clearResult: (state) => {
