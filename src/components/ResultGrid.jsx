@@ -33,7 +33,7 @@ const ResultGrid = () => {
             type: "video",
             title: item.user.name,
             thumbnail: item.image,
-            src: item.url,
+            src: item.video_files[0].link,
           }));
         }
 
@@ -49,7 +49,7 @@ const ResultGrid = () => {
   if (loading) return <h1>Loading...</h1>;
 
   return (
-    <div className="flex w-full flex-wrap justify-center px-10 gap-6">
+    <div className="flex w-full flex-wrap justify-between px-10 gap-6">
       {result?.map((item, index) => (
         <div key={index}>
           <ResultCard item={item} />
