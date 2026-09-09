@@ -3,6 +3,7 @@ import { fetchImages, fetchVideos } from "../api/mediaApi";
 import { useEffect } from "react";
 import { setError, setLoading, setResult } from "../redux/slices/searchSlice";
 import ResultCard from "./ResultCard";
+import { Link, useNavigate } from "react-router-dom";
 
 const ResultGrid = () => {
   const { query, activeTab, result, loading, error } = useSelector(
@@ -24,6 +25,7 @@ const ResultGrid = () => {
             title: item.alt_description,
             thumbnail: item.urls.small,
             src: item.urls.full,
+            url: item.links.html,
           }));
         }
         if (activeTab === "videos") {
@@ -34,9 +36,11 @@ const ResultGrid = () => {
             title: item.user.name,
             thumbnail: item.image,
             src: item.video_files[0].link,
+            url: item.url,
           }));
         }
 
+        // console.log(data)
         dispatch(setResult(data));
       } catch (error) {
         dispatch(setError(error.message));
@@ -52,7 +56,9 @@ const ResultGrid = () => {
     <div className="flex w-full flex-wrap justify-between px-10 gap-6">
       {result?.map((item, index) => (
         <div key={index}>
-          <ResultCard item={item} />
+          <a href={item.url}>
+            <ResultCard item={item} />
+          </a>
         </div>
       ))}
     </div>

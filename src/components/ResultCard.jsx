@@ -27,7 +27,7 @@ const ResultCard = ({ item }) => {
         )}
       </div>
       <div id="bottom" className="absolute p-4 bottom-0 h-[35%] w-full">
-        <h2 className="text-xl">{item.title}</h2>
+        <h2 className="text-xl font-semibold">{item.title}</h2>
       </div>
     </div>
   );
