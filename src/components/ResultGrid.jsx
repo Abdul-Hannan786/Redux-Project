@@ -56,9 +56,7 @@ const ResultGrid = () => {
     <div className="flex w-full flex-wrap justify-between px-10 gap-6">
       {result?.map((item, index) => (
         <div key={index}>
-          <a href={item.url}>
-            <ResultCard item={item} />
-          </a>
+          <ResultCard item={item} />
         </div>
       ))}
     </div>

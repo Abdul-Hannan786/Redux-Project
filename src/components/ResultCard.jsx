@@ -1,9 +1,7 @@
-import React from "react";
-
 const ResultCard = ({ item }) => {
   return (
     <div className="h-80 relative bg-white w-[22vw] rounded">
-      <div className="h-full">
+      <a href={item.url} className="h-full">
         {item.type === "image" ? (
           <img
             className="w-full h-full object-cover object-center"
@@ -25,9 +23,15 @@ const ResultCard = ({ item }) => {
         ) : (
           ""
         )}
-      </div>
-      <div id="bottom" className="absolute p-4 bottom-0 h-[35%] w-full">
-        <h2 className="text-xl font-semibold">{item.title}</h2>
+      </a>
+      <div
+        id="bottom"
+        className="absolute p-6 bottom-0 w-full flex justify-between items-center gap-2"
+      >
+        <h2 className="text-lg font-semibold capitalize">{item.title}</h2>
+        <button className="bg-gray-600 rounded px-3 py-1 font-medium cursor-pointer">
+          Save
+        </button>
       </div>
     </div>
   );
