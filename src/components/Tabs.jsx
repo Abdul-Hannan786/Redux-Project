@@ -10,7 +10,7 @@ const Tabs = () => {
     <div className="flex gap-5 p-10">
       {tabs.map((tab, index) => (
         <button
-          className={`${activeTab === tab ? "bg-emerald-600" : "bg-gray-600"} transition-all cursor-pointer active:scale-95 px-5 py-1.5 rounded uppercase `}
+          className={`${activeTab === tab ? "bg-orange-400" : "bg-gray-600"} transition-all cursor-pointer active:scale-95 px-5 py-1.5 rounded uppercase `}
           key={index}
           onClick={() => dispatch(setActiveTab(tab))}
         >

@@ -3,7 +3,6 @@ import { fetchImages, fetchVideos } from "../api/mediaApi";
 import { useEffect } from "react";
 import { setError, setLoading, setResult } from "../redux/slices/searchSlice";
 import ResultCard from "./ResultCard";
-import { Link, useNavigate } from "react-router-dom";
 
 const ResultGrid = () => {
   const { query, activeTab, result, loading, error } = useSelector(
@@ -47,7 +46,7 @@ const ResultGrid = () => {
       }
     };
     getData();
-  }, [query, activeTab]);
+  }, [query, activeTab, dispatch]);
 
   if (error) return <h1>Error</h1>;
   if (loading) return <h1>Loading...</h1>;

@@ -1,10 +1,10 @@
 const ResultCard = ({ item }) => {
   return (
-    <div className="h-80 relative bg-white w-[22vw] rounded">
-      <a href={item.url} className="h-full">
+    <div className="h-80 relative w-[22vw] rounded-xl overflow-hidden">
+      <a href={item.url} className="h-full rounded-xl">
         {item.type === "image" ? (
           <img
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center rounded-xl"
             src={item.src}
           />
         ) : (
@@ -26,10 +26,10 @@ const ResultCard = ({ item }) => {
       </a>
       <div
         id="bottom"
-        className="absolute p-6 bottom-0 w-full flex justify-between items-center gap-2"
+        className="absolute px-4 py-6 bottom-0 w-full flex justify-between items-center gap-2 line-clamp-2"
       >
         <h2 className="text-lg font-semibold capitalize">{item.title}</h2>
-        <button className="bg-gray-600 rounded px-3 py-1 font-medium cursor-pointer">
+        <button className="bg-orange-400 active:scale-90 transition-all rounded px-3 py-1 font-medium cursor-pointer">
           Save
         </button>
       </div>
