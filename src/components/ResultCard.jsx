@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
+
 const ResultCard = ({ item }) => {
+
+  const addToFunction = (item) => {
+    console.log(item)
+  }
+
   return (
     <div className="h-80 relative w-[22vw] rounded-xl overflow-hidden">
-      <a href={item.url} className="h-full rounded-xl">
+      <Link target="_blank" to={item.url} className="h-full rounded-xl">
         {item.type === "image" ? (
           <img
             className="w-full h-full object-cover object-center rounded-xl"
@@ -23,13 +30,13 @@ const ResultCard = ({ item }) => {
         ) : (
           ""
         )}
-      </a>
+      </Link>
       <div
         id="bottom"
         className="absolute px-4 py-6 bottom-0 w-full flex justify-between items-center gap-2 line-clamp-2"
       >
         <h2 className="text-lg font-semibold capitalize">{item.title}</h2>
-        <button className="bg-orange-400 active:scale-90 transition-all rounded px-3 py-1 font-medium cursor-pointer">
+        <button onClick={() => addToFunction(item)} className="bg-orange-400 active:scale-90 transition-all rounded px-3 py-1 font-medium cursor-pointer">
           Save
         </button>
       </div>
