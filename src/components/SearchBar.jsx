@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <form onSubmit={submitHandler} className="flex gap-5 bg-gray-900 p-10">
+      <form onSubmit={submitHandler} className="flex gap-5 bg-(--c1) p-10">
         <input
           type="text"
           value={text}
