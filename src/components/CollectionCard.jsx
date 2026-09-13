@@ -1,14 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  addCollection,
-  addToast,
-  removeCollection,
-} from "../redux/slices/CollectionSlice";
+import { addToast, removeCollection } from "../redux/slices/CollectionSlice";
 
-const ResultCard = ({ item }) => {
+const CollectionCard = ({ item }) => {
   const dispatch = useDispatch();
-  const collectionItem = useSelector((state) => state.collection.items);
 
   return (
     <div className="h-80 relative w-full rounded-xl overflow-hidden">
@@ -41,23 +36,16 @@ const ResultCard = ({ item }) => {
 
         <button
           onClick={() => {
-            if (!collectionItem.some((citem) => citem.id === item.id)) {
-              dispatch(addCollection(item));
-              dispatch(addToast("Media Saved Successfully"));
-            } else {
-              dispatch(removeCollection(item.id));
-              dispatch(addToast("Media unsaved successfully"));
-            }
+            dispatch(removeCollection(item.id));
+            dispatch(addToast("Media unsaved successfully"));
           }}
-          className="bg-orange-400 font-semibold active:scale-90 transition-all rounded px-3 py-1 cursor-pointer"
+          className="bg-red-600 font-semibold active:scale-90 transition-all rounded px-3 py-1 cursor-pointer"
         >
-          {!collectionItem.some((citem) => citem.id === item.id)
-            ? "Save"
-            : "Saved"}
+          Remove
         </button>
       </div>
     </div>
   );
 };
 
-export default ResultCard;
+export default CollectionCard;
