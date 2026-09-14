@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToast, removeCollection } from "../redux/slices/CollectionSlice";
+import Mediabadge from "./Mediabadge";
 
 const CollectionCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const CollectionCard = ({ item }) => {
           Remove
         </button>
       </div>
+      <Mediabadge type={item.type} />
     </div>
   );
 };
