@@ -28,7 +28,7 @@ const CollectionCard = ({ item }) => {
       </Link>
       <div
         id="bottom"
-        className="absolute px-4 py-6 bottom-0 w-full flex justify-between items-center gap-2"
+        className="absolute px-4 py-6 bottom-0 w-full flex justify-between items-center gap-3"
       >
         <h2 className="text-lg font-semibold capitalize line-clamp-2">
           {item.title}
@@ -39,7 +39,7 @@ const CollectionCard = ({ item }) => {
             dispatch(removeCollection(item.id));
             dispatch(addToast("Media unsaved successfully"));
           }}
-          className="bg-red-600 font-semibold active:scale-90 transition-all rounded px-3 py-1 cursor-pointer"
+          className="bg-sky-500 text-[13px] font-semibold active:scale-90 transition-all rounded px-3 py-1 cursor-pointer"
         >
           Remove
         </button>
